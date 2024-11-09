@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from 'next/image';
+import { useEffect } from "react";
 
 import useLoginReducer from "../store/reducers/useLoginReducer";
 import validateLoginForm from "../utils/validateLoginForm";
@@ -8,12 +9,18 @@ import { useLogin } from "../services/mutations";
 import logo from "../assets/image/logo.png";
 import styles from "./Forms.module.css";
 import { useRouter } from "next/router";
+import { getCookie } from "../utils/cookie";
 
 
 const LoginPage = () => {
 	const [formData, dispatchFormData] = useLoginReducer();
 	const { mutate } = useLogin();
 	const router = useRouter();
+
+	useEffect(() => {
+		const token = getCookie("token");
+		token && router.replace("/");
+	}, [router]);
 
 	const changeHandler = (event) => {
 		const value = event.target.value;
