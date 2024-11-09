@@ -10,6 +10,7 @@ import logo from "../assets/image/logo.png";
 import styles from "./Forms.module.css";
 import { useRouter } from "next/router";
 import { getCookie } from "../utils/cookie";
+import toast from "react-hot-toast";
 
 
 const LoginPage = () => {
@@ -43,11 +44,11 @@ const LoginPage = () => {
 				{ username: formData.name, password: formData.password },
 				{
 					onSuccess: (data) => {
-						console.log(data.data);
+						toast.success("وارد شدید!")
 						setCookie("token", data.data?.token);
 						router.replace("/")
 					},
-					onError: (error) => console.log(error.response.data.message),
+					onError: (error) => toast.error("نام کاربری یا رمز عبور اشتباه است"),
 				}
 			);
 		}

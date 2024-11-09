@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import closeImg from "../../assets/image/close.png";
 import styles from "./DeleteConfirmModal.module.css"
+import toast from "react-hot-toast";
 
 const DeleteConfirmModal = ({ id, setIsDeleteModalShow }) => {
 	const { mutate } = useDeleteProduct();
@@ -12,8 +13,8 @@ const DeleteConfirmModal = ({ id, setIsDeleteModalShow }) => {
 		mutate(
 			{ data },
 			{
-				onSuccess: (data) => console.log(data),
-				onError: (error) => console.log(error),
+				onSuccess: (data) => toast.success("محصول با موفقیت حذف شد!"),
+				onError: (error) => toast.error("مدت اعتبار توکن تمام شده - صفحه را مجدد بارگذاری کنید")
 			}
 		);
 	};

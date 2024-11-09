@@ -1,6 +1,7 @@
 import styles from "./addAndEditModals.module.css";
 import useAddProductReducer from "../../store/reducers/useAddProductReducer";
 import { usePostProduct } from "../../services/mutations";
+import toast from "react-hot-toast";
 
 const AddProductModal = ({ setIsAddModalOpen  }) => {
 	const [formData, dispatchFormData] = useAddProductReducer();
@@ -25,11 +26,10 @@ const AddProductModal = ({ setIsAddModalOpen  }) => {
 	  if(formData.name && formData.price) {
 		  mutate({ name: formData.name, price: formData.price, quantity: formData.quantity},{
 			onSuccess: (data) => {
-				console.log(data.data);
-				
+				toast.success("محصول با موفقیت اضافه شد!")
 				setIsAddModalOpen(false)
 			},
-			onError: (error) => console.log(error.response.data.message),
+			onError: (error) => toast.error("مدت اعتبار توکن تمام شده - صفحه را مجدد بارگذاری کنید"),
 		})
 	  }	else {
 		dispatchFormData({ type: "SET_ERROR",field: "name", payload: "نام کالا را وارد کنید" })

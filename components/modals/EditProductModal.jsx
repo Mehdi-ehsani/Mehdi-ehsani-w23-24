@@ -3,6 +3,7 @@ import styles from "./addAndEditModals.module.css";
 
 import { useEditProduct } from "../../services/mutations";
 import useEditProductReducer from "../../store/reducers/useEditProductReducer";
+import toast from "react-hot-toast";
 
 const EditProductModal = ({ setIsEditModalShow , id  ,data}) => {
 	const [formData, dispatchFormData] = useEditProductReducer(id , data);
@@ -28,11 +29,10 @@ const EditProductModal = ({ setIsEditModalShow , id  ,data}) => {
 	  if(formData.name || formData.price) {
 		  mutate({ name: formData.name, price: formData.price, quantity: formData.quantity},{
 			onSuccess: (data) => {
-				console.log(data.data);
-				
+				toast.success("اطلاعات محصول با موفقیت ویرایش شد!")	
 				setIsEditModalShow(false)
 			},
-			onError: (error) => console.log(error.response.data.message),
+			onError: (error) => toast.error("مدت اعتبار توکن تمام شده - صفحه را مجدد بارگذاری کنید"),
 		})
 	  }	
     }

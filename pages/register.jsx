@@ -11,6 +11,7 @@ import { getCookie } from "../utils/cookie";
 import styles from "./Forms.module.css";
 import logo from "../assets/image/logo.png";
 import { useRouter } from "next/router";
+import toast from "react-hot-toast";
 
 const RegistrationPage = () => {
 	const [formData, dispatchFormData] = useRegisterReducer();
@@ -47,10 +48,10 @@ const RegistrationPage = () => {
 				{ username: formData.name, password: formData.password },
 				{
 					onSuccess: (data) => {
-						console.log(data.data.message);
+						toast.success("حساب کاربری با موفقیت ساخته شد!")
 						router.replace("/login");
 					},
-					onError: (error) => console.log(error.response.data.message),
+					onError: (error) => toast.error("نام کابری در حال حاضر وجود دارد"),
 				}
 			);
 		}
