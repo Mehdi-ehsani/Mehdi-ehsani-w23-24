@@ -1,0 +1,33 @@
+.paginationContainer {
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.pageNumberBtn {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	border: 2px solid #8d8d8d50;
+	color: #8d8d8d50;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 35px;
+	cursor: pointer;
+}
+.active {
+    line-height: 37px !important;
+	border: none;
+	color: #ffffff;
+    background: #55A3F0;
+}
+.prevBtn , .nextBtn {
+  width: 35px;
+  height: 35px;
+  color: #55a3f0;
+  border: 2px solid #55A3F0;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
