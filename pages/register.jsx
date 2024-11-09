@@ -67,6 +67,7 @@ const RegistrationPage = () => {
 					value={formData.name}
 					type="text"
 					placeholder="نام کاربری"
+					style={formData.errors.name ? {border: "1px solid red"} : {}}
 				/>
 				<p className={styles.error}>{formData.errors.name}</p>
 				<input
@@ -75,6 +76,7 @@ const RegistrationPage = () => {
 					value={formData.password}
 					type="password"
 					placeholder="رمز عبور"
+					style={formData.errors.password ? {border: "1px solid red"} : {}}
 				/>
 				<p className={styles.error}>{formData.errors.password}</p>
 				<input
@@ -83,6 +85,7 @@ const RegistrationPage = () => {
 					value={formData.confirmPassword}
 					type="password"
 					placeholder=" تکرار رمز عبور"
+					style={formData.errors.confirmPassword ? {border: "1px solid red"} : {}}
 				/>
 				<p className={styles.error}>{formData.errors.confirmPassword}</p>
 				<button onClick={addUser} className={styles.submitBtn} type="submit">
