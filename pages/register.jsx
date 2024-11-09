@@ -2,13 +2,11 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from 'next/image';
 
-
-
 import useRegisterReducer from "../store/reducers/useRegisterReducer";
 import validateRegisterForm from "../utils/validateRegisterForm";
 import { useRegister } from "../services/mutations";
 import { getCookie } from "../utils/cookie";
-import styles from "./Forms.module.css";
+import styles from "../styles/Forms.module.css";
 import logo from "../assets/image/logo.png";
 import { useRouter } from "next/router";
 import toast from "react-hot-toast";
@@ -19,8 +17,6 @@ const RegistrationPage = () => {
 	const router = useRouter();
 
 	useEffect(() => {
-		console.log("register")
-
 		const token = getCookie("token");
 		token && router.replace("/");
 	}, [router]);

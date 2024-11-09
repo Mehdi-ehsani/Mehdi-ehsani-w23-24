@@ -7,7 +7,7 @@ import validateLoginForm from "../utils/validateLoginForm";
 import { setCookie } from "../utils/cookie";
 import { useLogin } from "../services/mutations";
 import logo from "../assets/image/logo.png";
-import styles from "./Forms.module.css";
+import styles from "../styles/Forms.module.css";
 import { useRouter } from "next/router";
 import { getCookie } from "../utils/cookie";
 import toast from "react-hot-toast";
@@ -19,8 +19,6 @@ const LoginPage = () => {
 	const router = useRouter();
 
 	useEffect(() => {
-		console.log("login")
-
 		const token = getCookie("token");
 		token && router.replace("/");
 	}, [router]);

@@ -3,7 +3,7 @@ import Image from "next/image"
 
 import { useProducts } from "../services/queries";
 import settingImg from "../assets/image/setting.png";
-import styles from "./products.module.css";
+import styles from "../styles/products.module.css";
 import Product from "../components/Product";
 import AddProductModal from "../components/modals/AddProductModal";
 import { useMultiDeleteProduct } from "../services/mutations";

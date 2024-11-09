@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import styles from "./404.module.css"
+import styles from "../styles/404.module.css"
 import img from "../assets/image/notfound.png"
 
 const NotFound = () => {
