@@ -1,5 +1,23 @@
+@font-face {
+  font-family: vazirmatn;
+  src: url(../assets/Fonts/Vazirmatn-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: vazirmatn;
+  src: url(../assets/Fonts/Vazirmatn-Medium.ttf);
+  font-weight: 500;
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+body , input , button{
+  font-family: vazirmatn, Arial, Helvetica, sans-serif;
+  direction: rtl;
+}
+body {
+  position: relative;
+  background: #F7F8F8;
 }
