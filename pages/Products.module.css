@@ -1,0 +1,113 @@
+.container {
+	margin: 0 auto;
+	width: 1140px;
+	min-height: 100dvh;
+	padding-top: 30px;
+}
+.products {
+	width: 100%;
+    height: 737px;
+    border: 1px solid #e4e4e4;
+    border-radius: 30px;
+    margin: 10px 0;
+    overflow: hidden;
+	background: #ffffff;
+}
+.header {
+    width: 100%;
+    height: 70px;
+    background: #f2f2f2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 0 39px;
+}
+.header p {
+    font-size: 14px;
+    color: #282828;
+    font-weight: 500;
+}
+.btn {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+.btn button {
+	width: 132px;
+	height: 45px;
+	border-radius: 10px;
+	outline: none;
+	border: none;
+	background: #55a3f0;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 400;
+	cursor: pointer;
+}
+.btn div {
+	display: flex;
+	align-items: center;
+}
+.btn h1 {
+	font-size: 1.5rem;
+	font-weight: 400;
+	color: #282828;
+	margin-right: 10px;
+}
+.bContainer {
+	display: flex;
+	gap: 10px;
+}
+.selectBtn {
+	background: #F43F5E !important;
+	color: #ffffff;
+}
+@media (max-width: 1160px) {
+	.container {
+		width: 100%;
+	}
+	.btn {
+		width: calc(100% - 20px);
+		margin: 30px 10px 0;
+	}
+	.products {
+		width: calc(100% - 20px);
+		margin: 10px;
+	}
+}
+@media (max-width:700px) {
+    .header {
+		padding: 0 10px;
+	}
+}
+@media (max-width:500px) {
+    .btn button {
+		width: 100px;
+		height: 39px;
+		font-size: .9rem;
+	}
+	.btn h1 {
+		font-size: 1.1rem;
+	}.header p {
+		font-size: 12px;
+	}
+}
+@media (max-width:420px) {
+    .btn {
+		flex-direction: column;
+		gap: 10px;
+	}
+	.btn h1 {
+		font-size: 1.5rem;
+	}
+	.bContainer {
+		margin: 0 10px;
+		width: 100%;
+	}
+	.bContainer button {
+		width: 50%;
+	}
+}
