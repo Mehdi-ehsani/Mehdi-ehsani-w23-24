@@ -13,7 +13,10 @@ const DeleteConfirmModal = ({ id, setIsDeleteModalShow }) => {
 		mutate(
 			{ data },
 			{
-				onSuccess: (data) => toast.success("محصول با موفقیت حذف شد!"),
+				onSuccess: (data) => {
+					toast.success("محصول با موفقیت حذف شد!");
+					setIsDeleteModalShow(false)
+				},
 				onError: (error) => toast.error("مدت اعتبار توکن تمام شده - صفحه را مجدد بارگذاری کنید")
 			}
 		);
