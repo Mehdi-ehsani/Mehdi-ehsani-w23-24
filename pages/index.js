@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
-import { getCookie } from "../utils/cookie";
+import { useState } from "react";
 import Image from "next/image"
 
 import { useProducts } from "../services/queries";
-
 import settingImg from "../assets/image/setting.png";
 import styles from "./products.module.css";
 import Product from "../components/Product";
@@ -13,6 +11,7 @@ import PaginationButtons from "../components/PaginationButtons";
 import Navbar from "../components/Navbar";
 import Spinner from "../components/Spinner/Spinner";
 
+
 const ProductsPage = () => {
 	const [isAddModalShow, setIsAddModalShow] = useState(false);
 	const [pageNumber, setPageNumber] = useState(1);
@@ -21,11 +20,7 @@ const ProductsPage = () => {
 	const [searchedValue , setSearchedValue] = useState("")
 
 	const {mutate} = useMultiDeleteProduct()
-
-
-
-
-	const { data, isPending, isError, error } = useProducts(pageNumber, searchedValue);
+    const { data, isPending, isError, error } = useProducts(pageNumber, searchedValue);
 
 	const handleCheckboxChange = (id) => {
 		setSelectedIds((prevSelectedIds) => {

@@ -18,6 +18,8 @@ const LoginPage = () => {
 	const router = useRouter();
 
 	useEffect(() => {
+		console.log("login")
+
 		const token = getCookie("token");
 		token && router.replace("/");
 	}, [router]);

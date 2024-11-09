@@ -1,18 +1,17 @@
-import { useEffect } from "react";
 import { getCookie } from "../utils/cookie";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const AuthProvider = ({ children }) => {
   const router = useRouter();
 
   useEffect(() => {
-    const cookie = getCookie();
-    if (!cookie) {
-      router.replace("/login");
-    }
-  }, []);
+      console.log("auth")
 
-  return <div>{children}</div>;
+    const token = getCookie("token");
+    token ? null : router.replace("/login");
+}, []);
+  return children;
 };
 
 export default AuthProvider;

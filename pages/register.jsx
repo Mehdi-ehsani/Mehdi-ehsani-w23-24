@@ -18,6 +18,8 @@ const RegistrationPage = () => {
 	const router = useRouter();
 
 	useEffect(() => {
+		console.log("register")
+
 		const token = getCookie("token");
 		token && router.replace("/");
 	}, [router]);
