@@ -10,16 +10,17 @@ import { useRegister } from "../services/mutations";
 import { getCookie } from "../utils/cookie";
 import styles from "./Forms.module.css";
 import logo from "../assets/image/logo.png";
+import { useRouter } from "next/router";
 
 const RegistrationPage = () => {
 	const [formData, dispatchFormData] = useRegisterReducer();
 	const { mutate } = useRegister();
-	// const navigate = useNavigate();
+	const router = useRouter();
 
-	// useEffect(() => {
-	// 	const token = getCookie("token");
-	// 	token && navigate("/");
-	// }, [navigate]);
+	useEffect(() => {
+		const token = getCookie("token");
+		token && router.replace("/");
+	}, [router]);
 
 	const changeHandler = (event) => {
 		const value = event.target.value;
@@ -45,7 +46,7 @@ const RegistrationPage = () => {
 				{
 					onSuccess: (data) => {
 						console.log(data.data.message);
-						// navigate("/login");
+						router.replace("/login");
 					},
 					onError: (error) => console.log(error.response.data.message),
 				}
