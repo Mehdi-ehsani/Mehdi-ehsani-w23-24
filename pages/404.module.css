@@ -1,0 +1,30 @@
+.container {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container img {
+    width: 800px;
+}
+.container a {
+    padding: 7px 10px;
+    border: 2px solid #55a3f0;
+    text-decoration: none;
+    color: #55a3f0;
+    border-radius: 9px;
+    margin-bottom: 10px;
+    transition: .3s ease-in;
+}
+.container a:hover {
+    background: #55a3f0;
+    color: #fff;
+}
+@media (max-width: 800px) {
+    .container img {
+        width: 80%;
+        height: 400px;
+    }
+}
